@@ -48,7 +48,19 @@ public class App {
         persona.setEdad(edad);
         persona.setLaboral(laboral);
         
-        Accesobd.guardar(persona);
+        
+        try {
+			Accesobd.abrir();
+			
+			Accesobd.guardar(persona);
+
+	        Accesobd.cerrar();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         
         sc.close();
         
