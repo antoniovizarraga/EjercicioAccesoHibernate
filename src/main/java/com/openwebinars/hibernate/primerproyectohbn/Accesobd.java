@@ -13,8 +13,8 @@ public class Accesobd {
 	private static Transaction transaction;
 
 	protected static void setUp() {
-		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure() // por defecto:
-																									// hibernate.cfg.xml
+		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+				.configure() // por defecto: hibernate.cfg.xml
 				.build();
 		try {
 			sf = new MetadataSources(registry).buildMetadata().buildSessionFactory();
@@ -67,14 +67,13 @@ public class Accesobd {
 	}
 
 	// Actualizar Persona
-	public static void actualizar(int id, String nombre, String apellidos, int Edad, String laboral) throws Exception {
+	public static void actualizar(int id, String nombre, String apellidos, int Edad) throws Exception {
 		sesion = abrir();
 		Transaction transaction = sesion.beginTransaction();
 		EntidadPersona persona = sesion.get(EntidadPersona.class, id);
 		persona.setNombre(nombre);
 		persona.setApellidos(apellidos);
 		persona.setEdad(Edad);
-		persona.setLaboral(laboral);
 		// session.saveOrUpdate(persona); // session.merge(persona);
 		sesion.update(persona);
 		transaction.commit();

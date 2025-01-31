@@ -16,14 +16,11 @@ private int idPersona;
 private String apellidos;
 @Column(name = "Edad")
 private int edad;
-@Column(name = "Laboral")
-private String laboral;
 
-    public EntidadPersona(String nombre, String apellidos, int edad, String laboral) {
+    public EntidadPersona(String nombre, String apellidos, int edad) {
         setNombre(nombre);
         setApellidos(apellidos);
         setEdad(edad);
-        setLaboral(laboral);
     }
 
     public EntidadPersona() {
@@ -60,14 +57,6 @@ private String laboral;
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-    
-    public String getLaboral() {
-        return laboral;
-    }
-
-    public void setLaboral(String laboral) {
-        this.laboral = laboral;
     }
 }
 

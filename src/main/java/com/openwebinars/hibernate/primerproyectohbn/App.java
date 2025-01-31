@@ -18,7 +18,7 @@ public class App {
     	int edad;
     	String laboral = "";
     	
-    	EntidadPersona persona = new EntidadPersona("Paco", "ElBelludo", 31, "Desempleado");
+    	EntidadPersona persona = new EntidadPersona("Paco", "ElBelludo", 31);
     	
     	Scanner sc = new Scanner(System.in);
     	
@@ -39,17 +39,17 @@ public class App {
         
         sc.nextLine();
         
-        System.out.println("Introduzca el laboral: ");
-        laboral = sc.nextLine();
         
         
         persona.setNombre(nombre);
         persona.setApellidos(apellidos);
         persona.setEdad(edad);
-        persona.setLaboral(laboral);
         
         
         try {
+        	
+        	
+        	
 			Accesobd.abrir();
 			
 			Accesobd.guardar(persona);
