@@ -17,6 +17,7 @@ public class App {
 		String apellidos = "";
 		int edad;
 		int userInput = 0;
+		int id;
 
 		EntidadPersona persona = new EntidadPersona("Paco", "ElBelludo", 31);
 
@@ -55,7 +56,7 @@ public class App {
 					try {
 						Accesobd.leerTodo();
 					} catch (Exception e) {
-						System.err.println("Error: No se pudo leer los datos de la tabla Persona.");
+						System.out.println(ConsoleColors.RED + "Error: No se pudo leer los datos de la tabla Persona." + ConsoleColors.RESET);
 					}
 				} else if(userInput == 1) {
 					System.out.println("Escribe la ID de la persona de la cuál quieres recibir sus datos.");
@@ -66,7 +67,7 @@ public class App {
 					try {
 						Accesobd.leer(userInput);
 					} catch (Exception e) {
-						System.err.println("Error: No se pudo leer los datos de la persona especificada en la tabla Persona.");
+						System.out.println(ConsoleColors.RED + "Error: No se pudo leer los datos de la persona especificada en la tabla Persona." + ConsoleColors.RESET);
 					}
 				}
 				
@@ -108,6 +109,31 @@ public class App {
 				break;
 				
 			case 3:
+				
+				System.out.println("Introduzca la ID de la persona que quiera modificar.");
+				
+				id = sc.nextInt();
+				
+				sc.nextLine();
+				
+				System.out.println("Datos a editar:");
+				System.out.println("Introduzca el nombre: ");
+				nombre = sc.nextLine();
+
+				System.out.println("Introduzca los apellidos: ");
+				apellidos = sc.nextLine();
+
+				System.out.println("Introduzca una edad: ");
+
+				edad = sc.nextInt();
+
+				sc.nextLine();
+
+				try {
+					Accesobd.actualizar(id, nombre, apellidos, edad);
+				} catch (Exception e) {
+					System.out.println(ConsoleColors.RED + "Error: No se pudo modificar la Persona." + ConsoleColors.RESET);
+				}
 				
 				break;
 			

@@ -120,7 +120,6 @@ public class Accesobd {
 		persona.setEdad(Edad);
 		// session.saveOrUpdate(persona); // session.merge(persona);
 		sesion.update(persona);
-		transaction.commit();
 		cerrar();
 	}
 
