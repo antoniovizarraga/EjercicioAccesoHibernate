@@ -1,5 +1,13 @@
 package com.openwebinars.hibernate.primerproyectohbn;
 
+import java.util.List;
+import java.util.logging.Level;
+
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,6 +21,7 @@ public class Accesobd {
 	private static Transaction transaction;
 
 	protected static void setUp() {
+		java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.SEVERE);
 		final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
 				.configure() // por defecto: hibernate.cfg.xml
 				.build();
@@ -21,6 +30,9 @@ public class Accesobd {
 		} catch (Exception e) {
 			StandardServiceRegistryBuilder.destroy(registry);
 		}
+		
+		
+
 	}
 
 	public static Session abrir() throws Exception {
@@ -40,23 +52,20 @@ public class Accesobd {
 		sf.close();
 	}
 
-	// Guardar Persona
-	private static SessionFactory sessionFactory = null;
 
-	public static void guardar(EntidadPersona persona) {
+
+	public static void guardar(EntidadPersona persona) throws Exception {
 		
-		Session session = sessionFactory.openSession();
-		Transaction transaction = session.beginTransaction();
-		int id = (int) session.save(persona);
+		sesion = abrir();
+		int id = (int) sesion.save(persona);
 		transaction.commit();
 		System.out.println(id);
-		sessionFactory.close();
+		sf.close();
 	}
 
 	// Leer Persona
 	public static void leer(int id) throws Exception {
 		sesion = abrir();
-		Transaction transaction = sesion.beginTransaction();
 		EntidadPersona persona = sesion.load(EntidadPersona.class, id);// PersonasEntity persona =
 																		// session.get(PersonasEntity.class, id); //
 																		// Esta línea también funcionaría como la
@@ -65,6 +74,41 @@ public class Accesobd {
 		transaction.commit();
 		cerrar();
 	}
+	
+	// Leer Persona con todos sus datos
+		public static void leerTodo() throws Exception {
+			sesion = abrir();
+			
+			CriteriaBuilder cb = sesion.getCriteriaBuilder();
+		    CriteriaQuery<EntidadPersona> cq = cb.createQuery(EntidadPersona.class);
+		    Root<EntidadPersona> rootEntry = cq.from(EntidadPersona.class);
+		    CriteriaQuery<EntidadPersona> all = cq.select(rootEntry);
+
+		    TypedQuery<EntidadPersona> allQuery = sesion.createQuery(all);
+			
+		    
+		    List<EntidadPersona> listado = allQuery.getResultList();
+		    
+			//List<EntidadPersona> listado = sesion.createQuery("SELECT * FROM Persona", EntidadPersona.class).getResultList();
+			
+			listado.forEach( (personaListado) -> {
+				
+				if(personaListado != null) {
+					System.out.println("Nombre: " + personaListado.getNombre());
+					System.out.println("Apellidos: " + personaListado.getApellidos());
+					System.out.println("Edad: " + Integer.toString(personaListado.getEdad()));
+					System.out.println(ConsoleColors.BLACK + "-----------------------" + ConsoleColors.RESET);
+				}
+				
+
+			} );
+			
+			
+
+			cerrar();
+		}
+	
+	
 
 	// Actualizar Persona
 	public static void actualizar(int id, String nombre, String apellidos, int Edad) throws Exception {
