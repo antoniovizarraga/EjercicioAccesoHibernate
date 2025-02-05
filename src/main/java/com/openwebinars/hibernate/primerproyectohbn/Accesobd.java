@@ -94,6 +94,7 @@ public class Accesobd {
 			listado.forEach( (personaListado) -> {
 				
 				if(personaListado != null) {
+					System.out.println("ID: " + Integer.toString(personaListado.getIdPersona()));
 					System.out.println("Nombre: " + personaListado.getNombre());
 					System.out.println("Apellidos: " + personaListado.getApellidos());
 					System.out.println("Edad: " + Integer.toString(personaListado.getEdad()));
@@ -113,7 +114,6 @@ public class Accesobd {
 	// Actualizar Persona
 	public static void actualizar(int id, String nombre, String apellidos, int Edad) throws Exception {
 		sesion = abrir();
-		Transaction transaction = sesion.beginTransaction();
 		EntidadPersona persona = sesion.get(EntidadPersona.class, id);
 		persona.setNombre(nombre);
 		persona.setApellidos(apellidos);
@@ -124,12 +124,14 @@ public class Accesobd {
 	}
 
 	// Borrar persona
-	public static void borrar(int id) {
-
+	public static void borrar(int id) throws Exception {
+		sesion = abrir();
 		EntidadPersona persona;
 
 		persona = sesion.get(EntidadPersona.class, id);
 		sesion.delete(persona);
+		
+		cerrar();
 	}
 
 }

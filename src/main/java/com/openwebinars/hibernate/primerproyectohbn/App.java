@@ -24,13 +24,14 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println(ConsoleColors.YELLOW + "¡Bienvenido al CRUD de Personas en Java!" + ConsoleColors.RESET);
-		System.out.println(ConsoleColors.GREEN + "⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \r\n"
-				+ "⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ \r\n"
-				+ "⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ \r\n" + "⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ \r\n"
-				+ "⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ \r\n" + "⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ \r\n"
-				+ "⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ \r\n"
-				+ "⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ \r\n"
-				+ "⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉" + ConsoleColors.RESET);
+		System.out.println(ConsoleColors.GREEN + "⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \r\n"
+				+ "⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ \r\n"
+				+ "⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ \r\n"
+				+ "⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ \r\n" + "⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ \r\n"
+				+ "⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ \r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ \r\n"
+				+ "⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ \r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ \r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉" + ConsoleColors.RESET);
 
 		while (userInput != 5) {
 			Menu();
@@ -45,36 +46,38 @@ public class App {
 
 				System.out.println("¿Quieres leer la tabla entera o quieres"
 						+ "sólo leer los datos de una persona en específico?");
-				System.out.println(
-						"Escribe: \"0\" en el teclado si quieres leer todos los datos,"
+				System.out.println("Escribe: \"0\" en el teclado si quieres leer todos los datos,"
 						+ "o: \"1\" si quieres leer los datos de una persona en específico.");
 				userInput = sc.nextInt();
-				
+
 				sc.nextLine();
-				
-				if(userInput == 0) {
+
+				if (userInput == 0) {
 					try {
 						Accesobd.leerTodo();
 					} catch (Exception e) {
-						System.out.println(ConsoleColors.RED + "Error: No se pudo leer los datos de la tabla Persona." + ConsoleColors.RESET);
+						System.out.println(ConsoleColors.RED + "Error: No se pudo leer los datos de la tabla Persona."
+								+ ConsoleColors.RESET);
 					}
-				} else if(userInput == 1) {
+				} else if (userInput == 1) {
 					System.out.println("Escribe la ID de la persona de la cuál quieres recibir sus datos.");
 					userInput = sc.nextInt();
-					
+
 					sc.nextLine();
-					
+
 					try {
 						Accesobd.leer(userInput);
 					} catch (Exception e) {
-						System.out.println(ConsoleColors.RED + "Error: No se pudo leer los datos de la persona especificada en la tabla Persona." + ConsoleColors.RESET);
+						System.out.println(ConsoleColors.RED
+								+ "Error: No se pudo leer los datos de la persona especificada en la tabla Persona."
+								+ ConsoleColors.RESET);
 					}
 				}
-				
+
 				break;
-				
+
 			case 2:
-				
+
 				System.out.println("Introduzca el nombre: ");
 				nombre = sc.nextLine();
 
@@ -96,7 +99,7 @@ public class App {
 					Accesobd.abrir();
 
 					Accesobd.guardar(persona);
-					
+
 					System.out.println(ConsoleColors.GREEN + "Persona guardada correctamente." + ConsoleColors.RESET);
 
 					// Accesobd.cerrar();
@@ -105,17 +108,17 @@ public class App {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
+
 				break;
-				
+
 			case 3:
-				
+
 				System.out.println("Introduzca la ID de la persona que quiera modificar.");
-				
+
 				id = sc.nextInt();
-				
+
 				sc.nextLine();
-				
+
 				System.out.println("Datos a editar:");
 				System.out.println("Introduzca el nombre: ");
 				nombre = sc.nextLine();
@@ -131,19 +134,57 @@ public class App {
 
 				try {
 					Accesobd.actualizar(id, nombre, apellidos, edad);
+
+					System.out
+							.println(ConsoleColors.GREEN + "Persona actualizada correctamente." + ConsoleColors.RESET);
 				} catch (Exception e) {
-					System.out.println(ConsoleColors.RED + "Error: No se pudo modificar la Persona." + ConsoleColors.RESET);
+					System.out.println(
+							ConsoleColors.RED + "Error: No se pudo modificar la Persona." + ConsoleColors.RESET);
+				}
+
+				break;
+
+			case 4:
+
+				System.out.println("Introduzca la ID de la persona que quiera eliminar.");
+
+				id = sc.nextInt();
+
+				sc.nextLine();
+
+				System.out.println(ConsoleColors.RED_BACKGROUND + "¡ATENCIÓN!" + ConsoleColors.RESET);
+				System.out.println(ConsoleColors.YELLOW + "Estás a punto de eliminar a la persona con ID: "
+						+ Integer.toString(id) + ConsoleColors.RESET);
+				
+				System.out.println(ConsoleColors.YELLOW + "¿Quieres confirmar estos cambios?" + ConsoleColors.RESET);
+				System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "Recuerda que una vez confirmados estos cambios, no podrán revertirse.");
+				System.out.println(ConsoleColors.YELLOW + "Escriba: \"0\" si no quiere eliminar a dicha persona, o escriba: \"1\" si quiere confirmar su eliminación." + ConsoleColors.RESET);
+				
+				userInput = sc.nextInt();
+				
+				sc.nextLine();
+				
+				id = userInput;
+				
+				if(userInput == 1) {
+					try {
+						Accesobd.borrar(id);
+						
+						System.out.println(ConsoleColors.GREEN + "Persona eliminada correctamente." + ConsoleColors.RESET);
+					} catch (Exception e) {
+						System.out.println(ConsoleColors.RED + "No pudo eliminarse a la persona. Puede ser que dicha persona no exista en la BBDD." + ConsoleColors.RESET);
+					}
+					
+					
+				} else {
+					System.out.println(ConsoleColors.CYAN + "Cambios revertidos. No se ha efectuado ningún cambio." + ConsoleColors.RESET);
 				}
 				
 				break;
-			
-			
-
 			}
 		}
 
 		System.out.println(ConsoleColors.CYAN + "Saliendo del programa..." + ConsoleColors.RESET);
-		
 
 		sc.close();
 
