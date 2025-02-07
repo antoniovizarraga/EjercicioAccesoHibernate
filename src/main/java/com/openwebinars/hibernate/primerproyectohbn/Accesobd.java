@@ -125,10 +125,8 @@ public class Accesobd {
 
 	// Borrar persona
 	public static void borrar(int id) throws Exception {
-		sesion = abrir();
-		EntidadPersona persona;
-
-		persona = sesion.get(EntidadPersona.class, id);
+		sesion = abrir();	
+		EntidadPersona persona = sesion.get(EntidadPersona.class, id);
 		sesion.delete(persona);
 		
 		cerrar();

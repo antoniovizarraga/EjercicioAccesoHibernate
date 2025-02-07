@@ -164,7 +164,7 @@ public class App {
 				
 				sc.nextLine();
 				
-				id = userInput;
+				
 				
 				if(userInput == 1) {
 					try {
@@ -187,6 +187,8 @@ public class App {
 		System.out.println(ConsoleColors.CYAN + "Saliendo del programa..." + ConsoleColors.RESET);
 
 		sc.close();
+		
+		
 
 	}
 

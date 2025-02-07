@@ -2,9 +2,13 @@ package com.openwebinars.hibernate.primerproyectohbn;
 
 import javax.persistence.*;
 import java.io.Serializable;
+
+
 @Entity
 @Table(name = "Persona")
 public class EntidadPersona implements Serializable {
+	
+	
 @Id
 @GeneratedValue(strategy= GenerationType.IDENTITY) //La opción más usada con MySQL
 @Column(name="ID")
