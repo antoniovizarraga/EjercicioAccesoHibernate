@@ -70,8 +70,9 @@ public class Accesobd {
 																		// session.get(PersonasEntity.class, id); //
 																		// Esta línea también funcionaría como la
 																		// anterior
-		System.out.println(persona.getNombre());
-		transaction.commit();
+		System.out.println("Nombre: " + persona.getNombre());
+		System.out.println("Apellidos: " + persona.getApellidos());
+		System.out.println("Edad: " + persona.getEdad());
 		cerrar();
 	}
 	
